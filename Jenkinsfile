@@ -10,8 +10,8 @@ pipeline {
         
         stage('Docker build') {
             steps {
-                pwsh(script: 'docker images -a')
-                pwsh(script: """
+                sh('docker images -a')
+                sh("""
                 docker images -a
                 docker build -t jenkins-pipeline .
                 docker images -a
